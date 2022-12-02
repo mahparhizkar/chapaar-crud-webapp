@@ -3,6 +3,7 @@ package com.chapaar.crud.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "order")
@@ -18,6 +19,7 @@ public class Order {
     @Column(name = "id")
     private long id;
 
+    @NotBlank(message = "Count is required")
     @Column(name = "count")
     private int count;
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,7 @@ public class ProductController {
         return "add-product-item";
     }
 
+    @Validated
     @PostMapping(value = "/add-product-item")
     public String addProductItem(@ModelAttribute("productItem") @Valid Product product, BindingResult bindingResult,
                                   ModelMap model) {
